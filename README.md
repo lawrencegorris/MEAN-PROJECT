@@ -8,11 +8,13 @@ Creating a 'friend book' using the MEAN stack. Using mongoose queries to make a 
 
 ## Must have features:
 - [ ] Show friend data to client
-- [ ] Friend schema on server for sending/getting data to and from the server.
-- [ ] Friend model to contain friends data on server
+- [x] Friend schema on server for sending/getting data to and from the server.
+- [x] Friend model to contain friends data on server
 - [ ] Styled and Responsive
 
-## Current projects
+## Updates:
+Able to send and get data to database from server (hardcoded in server.js).
+Can retrieve all-friends and single friend upon getting with unique ID.
 
 ## Commands
 To run this project locally:
