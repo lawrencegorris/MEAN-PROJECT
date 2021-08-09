@@ -35,11 +35,11 @@ app.listen(port, () => {
 
 // Put data to database
 
-app.get('/add-friend', (req, res) => {
+app.post('/add-friend', (req, res) => {
     const friend = new Friend({
-        firstName: 'Glenn',
-        lastName: 'Deroeck',
-        email: 'glennderoeck@veryhotmail.cum'
+        firstName: (req.body.firstName),
+        lastName: (req.body.lastName),
+        email: (req.body.email),
     });
 
     friend.save()

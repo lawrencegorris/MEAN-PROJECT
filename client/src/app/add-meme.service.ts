@@ -7,7 +7,11 @@ import { Friend } from './friend';
 })
 export class AddMemeService {
   
-  url = 'http://localhost:9001/add-friends'
+  url = 'http://localhost:9001/add-friend'
 
-  constructor() { }
+  addFriend(friend: Friend){
+    return this.http.post(this.url, friend);
+  }
+
+  constructor(private http: HttpClient) { }
 }
