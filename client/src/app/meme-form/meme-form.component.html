@@ -1,0 +1,9 @@
+<h2>Become a meme</h2>
+<section>
+    <form action="" #formName='ngForm' (ngSubmit)='sendMemeData()'>
+        <input ngModel type="text" placeholder="First name" [(ngModel)]='friendModel.firstname' #firstName='ngModel' name='input-firstname'>
+        <input ngModel type="text" placeholder="Last name" [(ngModel)]='friendModel.lastname' #firstName='ngModel' name='input-lastname'>
+        <input ngModel type="text" placeholder="email" [(ngModel)]='friendModel.email' #firstName='ngModel' name='input-email'>
+        <button>Become a meme</button>
+    </form>
+</section>

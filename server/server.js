@@ -1,5 +1,5 @@
 const express = require('express');
-
+const bodyParser = require('body-parser'); //understands http data
 const Friend = require('./schemas/friend-schema')
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/mean-project-db', {useNewUrlParser: true, useUnifiedTopology: true});
@@ -10,9 +10,18 @@ db.once('open', function(){
     console.log('Connected to database')
 })
 
-
 const app = express();
 const port = process.env.port || 9001
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}) );
+
+app.all("/*", function(req, res, next){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+    next();
+});
 
 app.use(express.static('public'))
 
@@ -28,9 +37,9 @@ app.listen(port, () => {
 
 app.get('/add-friend', (req, res) => {
     const friend = new Friend({
-        firstName: 'Elongated',
-        lastName: 'Muskrat',
-        email: 'elonmusk@spacex.space'
+        firstName: 'Glenn',
+        lastName: 'Deroeck',
+        email: 'glennderoeck@veryhotmail.cum'
     });
 
     friend.save()

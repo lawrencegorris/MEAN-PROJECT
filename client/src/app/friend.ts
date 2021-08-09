@@ -1,7 +1,7 @@
 export class Friend {
-    private firstname: string;
-    private lastname: string;
-    private email: string;
+    firstname: string;
+    lastname: string;
+    email: string;
 
     public constructor(firstname: string, lastname: string, email: string){
         this.firstname = firstname;
